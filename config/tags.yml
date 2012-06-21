@@ -1,0 +1,11 @@
+quarto:
+  leitor_1: 111
+  leitor_2: 222
+
+sala:
+  leitor_1: 333
+  leitor_2: 444
+
+cozinha:
+  leitor_1: 555
+
