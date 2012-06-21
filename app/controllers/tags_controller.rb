@@ -1,4 +1,5 @@
 class TagsController < ApplicationController
+  protect_from_forgery :except => :create
   # GET /tags
   # GET /tags.json
   def index
@@ -40,7 +41,14 @@ class TagsController < ApplicationController
   # POST /tags
   # POST /tags.json
   def create
-    @tag = Tag.new(params[:tag])
+    puts "TAGS PARAMS (#{params})"
+    if(params[:tag])
+      @tag = Tag.new(params[:tag])
+    else
+      shortcode_sensor = params[:shortcodeSensor]
+      epc = params[:epc]
+      @tag = Tag.new({"shortcode_sensor"=> shortcode_sensor, "epc" => epc})
+    end
 
     respond_to do |format|
       if @tag.save
