@@ -1,0 +1,33 @@
+<%= form_for(@tag) do |f| %>
+  <% if @tag.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tag.errors.count, "error") %> prohibited this tag from being saved:</h2>
+
+      <ul>
+      <% @tag.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :shortcode_sensor %><br />
+    <%= f.text_field :shortcode_sensor %>
+  </div>
+  <div class="field">
+    <%= f.label :epc %><br />
+    <%= f.text_field :epc %>
+  </div>
+  <div class="field">
+    <%= f.label :area %><br />
+    <%= f.text_field :area %>
+  </div>
+  <div class="field">
+    <%= f.label :timestamp %><br />
+    <%= f.datetime_select :timestamp %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

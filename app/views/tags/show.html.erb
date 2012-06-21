@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Shortcode sensor:</b>
+  <%= @tag.shortcode_sensor %>
+</p>
+
+<p>
+  <b>Epc:</b>
+  <%= @tag.epc %>
+</p>
+
+<p>
+  <b>Area:</b>
+  <%= @tag.area %>
+</p>
+
+<p>
+  <b>Timestamp:</b>
+  <%= @tag.timestamp %>
+</p>
+
+
+<%= link_to 'Edit', edit_tag_path(@tag) %> |
+<%= link_to 'Back', tags_path %>

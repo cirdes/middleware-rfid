@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  shortcode_sensor: MyString
+  epc: MyString
+  area: MyString
+  timestamp: 2012-06-21 11:50:41
+
+two:
+  shortcode_sensor: MyString
+  epc: MyString
+  area: MyString
+  timestamp: 2012-06-21 11:50:41
