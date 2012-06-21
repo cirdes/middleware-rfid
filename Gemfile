@@ -8,6 +8,7 @@ gem 'rails', '3.2.6'
 group :development, :test do
   gem 'sqlite3'
 end
+gem 'nifty-generators'
 
 # Gems used only for assets and not required
 # in production environments by default.
