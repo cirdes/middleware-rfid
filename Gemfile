@@ -39,3 +39,5 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem "mocha", :group => :test
+
+gem 'pg', :group => :production
