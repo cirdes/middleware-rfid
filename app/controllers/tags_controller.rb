@@ -48,8 +48,9 @@ class TagsController < ApplicationController
       shortcode_sensor = params[:shortcodeSensor]
       epc = params[:epc]
       timestamp = params[:timestamp]
-      puts "TIMESTAMP: (#{timestamp})"
-      @tag = Tag.new({"shortcode_sensor"=> shortcode_sensor, "epc" => epc})
+      @tag = Tag.new({"shortcode_sensor"=> shortcode_sensor,
+                      "epc" => epc,
+                      "timestamp" => timestamp})
     end
 
     respond_to do |format|

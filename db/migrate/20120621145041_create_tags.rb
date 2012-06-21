@@ -4,7 +4,7 @@ class CreateTags < ActiveRecord::Migration
       t.string :shortcode_sensor
       t.string :epc
       t.string :area
-      t.datetime :timestamp
+      t.string :timestamp
 
       t.timestamps
     end
