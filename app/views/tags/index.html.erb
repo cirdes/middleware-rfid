@@ -11,15 +11,16 @@
     <th></th>
   </tr>
 
-<% @tags.each do |tag| %>
+<% @tags.each_with_index do |tag, index| %>
   <tr>
+    <td><%= index %></td>
     <td><%= tag.shortcode_sensor %></td>
     <td><%= tag.epc %></td>
     <td><%= tag.area %></td>
     <td><%= tag.timestamp %></td>
     <td><%= link_to 'Show', tag %></td>
     <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
-    <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', tag, method: :delete %></td>
   </tr>
 <% end %>
 </table>
