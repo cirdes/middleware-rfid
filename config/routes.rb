@@ -1,4 +1,6 @@
 MiddlewareRfid::Application.routes.draw do
+  resources :clients
+
   resources :tags
 
   # The priority is based upon order of creation:
