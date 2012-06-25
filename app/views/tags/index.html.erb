@@ -1,6 +1,7 @@
 <h1>Listing tags</h1>
 <table>
   <tr>
+    <th>Index</th>
     <th>Shortcode sensor</th>
     <th>Epc</th>
     <th>Area</th>
@@ -12,7 +13,7 @@
 
 <% @tags.each_with_index do |tag, index| %>
   <tr>
-    <td><%= index %></td>
+    <td><%= (@tags.current_page - 1) * 15 + index %></td>
     <td><%= tag.shortcode_sensor %></td>
     <td><%= tag.epc %></td>
     <td><%= tag.area %></td>
@@ -25,6 +26,5 @@
 </table>
 
 <br />
-
 <%= paginate @tags %>
 <%= link_to 'New Tag', new_tag_path %>
