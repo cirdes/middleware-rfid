@@ -1,5 +1,4 @@
 <h1>Listing tags</h1>
-
 <table>
   <tr>
     <th>Shortcode sensor</th>
@@ -27,4 +26,5 @@
 
 <br />
 
+<%= paginate @tags %>
 <%= link_to 'New Tag', new_tag_path %>

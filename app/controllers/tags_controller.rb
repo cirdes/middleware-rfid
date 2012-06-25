@@ -3,7 +3,7 @@ class TagsController < ApplicationController
   # GET /tags
   # GET /tags.json
   def index
-    @tags = Tag.all(:order => "timestamp DESC")
+    @tags = Tag.order("timestamp DESC").page(params[:page]).per(15)
 
     respond_to do |format|
       format.html # index.html.erb
