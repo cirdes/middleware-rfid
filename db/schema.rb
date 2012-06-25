@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20120625001104) do
     t.string   "shortcode_sensor"
     t.string   "epc"
     t.string   "area"
-    t.string   "timestamp"
+    t.datetime "timestamp"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end

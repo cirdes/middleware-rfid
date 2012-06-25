@@ -1,13 +1,20 @@
 class Tag < ActiveRecord::Base
   attr_accessible :epc, :shortcode_sensor, :timestamp
 
-  before_validation :set_area
+  before_validation :set_area, :set_timestamp_format
   after_save :notify_clients
 
   AREAS = %w[quarto sala cozinha]
 
 
 
+  def set_timestamp_format
+    if self.timestamp_before_type_cast.kind_of? String
+      timestamp = self.timestamp_before_type_cast[0..9]
+      puts "timestamp: (#{timestamp})"
+      self.timestamp = DateTime.strptime(timestamp,'%s')
+    end
+  end
 
   def notify_clients
     clients = Client.where(:area => self.area)
