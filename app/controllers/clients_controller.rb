@@ -48,9 +48,16 @@ class ClientsController < ApplicationController
       name = params[:name]
       area = params[:area]
       url = params[:url]
-      @client = Client.new({"name"=> name,
+      @client = Client.find_by_name(name)
+
+      if @client
+        @client.area = area
+        @client.url = url
+      else
+        @client = Client.new({"name"=> name,
                       "area" => area,
                       "url" => url})
+      end
     end
 
 
